@@ -6,12 +6,11 @@ import (
 )
 
 func ReadFromFile(filename string) (*os.File, error) {
-	file, err := os.Open("../input.txt")
+	file, err := os.Open(filename)
 	if err != nil {
 		slog.Error("Error reading from file", "error", err)
 		return nil, err
 	}
-	defer file.Close()
 
 	return file, nil
 }
